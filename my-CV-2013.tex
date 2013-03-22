@@ -1,0 +1,139 @@
+%% start of file `my-CV-2013.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+% possible options include font size ('10pt', '11pt' and '12pt'),
+% paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper',
+% 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[11pt,a4paper,sans]{moderncv} 
+
+% moderncv themes
+% style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvstyle{classic}
+
+% color options 'blue' (default), 'orange', 'green',
+% 'red', 'purple', 'grey' and 'black'
+\moderncvcolor{blue}
+
+\usepackage{wangweicv}
+
+% to set the default font; use '\sfdefault' for the default sans serif font,
+% '\rmdefault' for the default roman one, or any tex font name
+% \renewcommand{\familydefault}{\sfdefault}
+
+% uncomment to suppress automatic page numbering for CVs longer than one page
+%\nopagenumbers{}
+
+% character encoding
+% if you are not using xelatex ou lualatex,
+% replace by the encoding you are using
+\usepackage[utf8]{inputenc}
+
+ % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+\usepackage{CJKutf8}
+\usepackage{tikz}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+% if you want to change the width of the column with the dates
+%\setlength{\hintscolumnwidth}{3cm}
+% for the 'classic' style, if you want to force the width allocated to
+% your name and avoid line breaks. be careful though, the length is normally
+% calculated to avoid any overlap with your personal info;
+% use this at your own typographical risks...
+%\setlength{\makecvtitlenamewidth}{10cm}
+
+\makeatletter
+\tikzset{
+    tl@startyear/.append style={
+        xshift=(0.5-\tl@startfraction)*\hintscolumnwidth,
+        anchor=base
+    }
+}
+\makeatother
+
+% quote, optional, remove / comment the line if not wanted.
+% \myquote{MAKE A LITTLE SPACE, MAKE A BETTER PLACE.}{Michael Jackson: <<Heal the world>>}
+
+% to show numerical labels in the bibliography (default is to show no labels);
+% only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% CONSIDER REPLACING THE ABOVE BY THIS
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%-------------------------------------------------------------------------------
+%                                 content
+%-------------------------------------------------------------------------------
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn} % to typeset your resume in Chinese using CJK
+\makecvtitle
+
+\footnotetext[1]{项目优先级:~Low, ~Normal, ~High.}
+% \footnotetext[2]{个人简历采用~\LaTeX~编写.}
+\footnotetext[2]{在项目中担任的角色.}
+
+\section{\CJKfamily{gbsn}{基本信息}}
+\cvdoubleitem{姓~名:}{王维}{政治面貌:}{中共党员}
+\cvdoubleitem{性~别:}{男}{籍~贯:}{湖北武汉}
+\cvdoubleitem{民~族:}{汉族}{个人主页:}{\texttt{\httplink{http://www.cnblogs.com/ict-wangwei}}}
+
+\section{\CJKfamily{gbsn}{教育经历}}
+
+% arguments 3 to 6 can be left empty
+% \cventry{2007--2011}{Degree}{Institution}{City}{\textit{Grade}}{Description}
+% \tlcventry{2007--2011}{Degree}{Institution}{City}{\textit{Grade}}{Description}
+\tllabelcventry{2007}{2011}{2007-2011}{\CJKfamily{gbsn}{学士}}{计算机科学与技术}{华中科技大学}{武汉}{}
+
+\tlcventry{2011}{0}{\CJKfamily{gbsn}{硕士在读}}{计算机科学与技术}{中国科学院计算技术研究所}{北京}{}
+
+\section{\CJKfamily{gbsn}{学士毕业论文}}
+\cvitem{论文题目}{\emph{基于非确定性错误的录制重放调试工具ReBranch的完善}}
+\cvitem{指导老师}{蒋文斌}
+
+\section{\CJKfamily{gbsn}{专业技能}}
+\cvdoubleitem{操作系统}{Ubuntu, Fedora, CentOS}{数据库}{MySQL, MongoDB, Memcached, Redis}
+\cvdoubleitem{编程语言}{C/C++, Python, Java, Lua, Bash}{文档编写}{\LaTeX, Office软件等}
+\cvdoubleitem{日常工具}{Git, GDB, Vim, CMake/Make, Screen}{外语水平}{英语~6~级, 自学日语}
+
+\section{\CJKfamily{gbsn}{硕士期间参与项目}}
+\tllabelcventry{2011}{2012}{2012.3-2012.6}{Normal\footnotemark[1]}{基于libvirt的虚拟机集群管理工具}{编程语言:C\&Python}{}{项目主要开发人员\footnotemark[2]}
+\tllabelcventry{2012}{0}{2012.7-2012.9}{Normal}{实验室p2p项目的虚拟机集群环境搭建和项目部署}{编程语言:C++\&Python}{}{环境搭建及部署维护人员}
+\tllabelcventry{2012}{2013}{2012.10-2013.1}{High}{实验室网络监控项目数据后台处理入库}{编程语言:C++\&Python}{}{项目主要开发人员}
+\tllabelcventry{2013}{0}{2013.2}{High}{基于bbs的社区发现}{编程语言:C++}{}{项目主要开发人员}
+
+\section{\CJKfamily{gbsn}{业余工作与开源项目}}
+\tllabelcventry{2012}{0}{2012.3-2012.6}{virt-kvm-manager}{\textsc{C\&Python}}{https://github.com/sofartogo/virt-kvm-manager}{基于libvirt的kvm虚拟机集群管理}{}
+\tllabelcventry{2012}{0}{2012.7-2012.10}{muduo-re}{\textsc{C++}}{https://github.com/sofartogo/muduo-re}{C++ 基于Reactor模式的网络编程库的代码重构}{}
+\tllabelcventry{2012}{0}{2012.9}{OSSC}{\textsc{C\&Shell}}{https://github.com/sofartogo/OSSC}{阿里云开放存储服务(Open Storage Service: OSS)~C~SDK, 首届阿里云开发者大赛获奖作品(最佳实用奖: 奖金~5~万人民币整)}{}
+\tllabelcventry{2012}{0}{2012.10}{oss-cpp-sdk}{\textsc{C++\&Shell}}{https://github.com/sofartogo/oss-cpp-sdk}{阿里云开放存储服务(Open Storage Service: OSS)~C++~SDK}{}
+\tllabelcventry{2012}{0}{2012.10}{lsm-tree-re}{\textsc{C}}{https://github.com/sofartogo/lsm-tree-re}{基于跳表的lsm-tree的代码重构}{}
+\tllabelcventry{2012}{0}{2012.12}{websql}{\textsc{C}}{https://github.com/sofartogo/websql}{结构化数据操作的rest-api}{}
+
+
+\section{\CJKfamily{gbsn}{本科及硕士阶段所获主要奖项}}
+\tllabelcventry{2007}{2008}{2007-2008}{\CJKfamily{gbsn}{国家励志奖学金}}{}{}{}{}
+\tllabelcventry{2008}{2009}{2008-2009}{\CJKfamily{gbsn}{国家励志奖学金}}{}{}{}{}
+\tllabelcventry{2009}{2010}{2009-2010}{\CJKfamily{gbsn}{北美数模竞赛二等奖}}{}{}{}{}
+\tllabelcventry{2011}{2012}{2012.11}{首届阿里云开发者大赛最佳实用奖}{}{}{}{}
+\tllabelcventry{2011}{2012}{2011-2012}{中科院计算技术研究所天玑团队优秀学生奖}{}{}{}{}
+
+\section{\CJKfamily{gbsn}{兴趣爱好}}
+\cvlistdoubleitem{篮球}{爬山}
+\cvlistdoubleitem{弹吉他}{算24点}
+% if you are typesetting your resume in Chinese using CJK;
+% the \clearpage is required for fancyhdr to work correctly with CJK,
+% though it kills the page numbering by making \lastpage undefined
+\clearpage
+\end{CJK*}
+\end{document}
+
+%% end of file `my-CV-2013.tex'.
